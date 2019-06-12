@@ -485,7 +485,7 @@ export default class SyncController extends videojs.EventTarget {
       this.trigger('timestampoffset');
 
       segment.start = segmentInfo.startOfSegment;
-      segment.end = timingInfo.end + mappingObj.mapping;
+      segment.end = segment.start + segment.duration;
     } else if (mappingObj) {
       segment.start = timingInfo.start + mappingObj.mapping;
       segment.end = timingInfo.end + mappingObj.mapping;
